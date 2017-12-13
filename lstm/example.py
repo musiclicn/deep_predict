@@ -7,9 +7,8 @@ from keras.optimizers import SGD
 import numpy as np
 category = 2
 
-x_raw = np.load(r'C:\Users\cheng\dev\data\features.npy')
-y_raw = np.load(r'C:\Users\cheng\dev\data\label.npy')
-
+x_raw = np.nan_to_num(np.load(r'C:\Users\cheng\dev\data\features.npy'))
+y_raw=np.load(r'C:\Users\cheng\dev\data\label.npy')
 print(x_raw.shape)
 train_size = 1500
 
@@ -41,8 +40,8 @@ model.compile(loss='categorical_crossentropy',
               metrics=['accuracy'])
 
 model.fit(x_train, y_train,
-          epochs=20,
-          batch_size=128)
+          epochs=100,
+          batch_size=2000)
 
 print('evaluation result:')
 score = model.evaluate(x_test, y_test, batch_size=128)
