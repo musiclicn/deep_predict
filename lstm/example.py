@@ -7,8 +7,8 @@ from keras.optimizers import SGD
 import numpy as np
 category = 2
 
-x_raw = np.nan_to_num(np.load(r'C:\Users\cheng\dev\data\features.npy'))
-y_raw=np.load(r'C:\Users\cheng\dev\data\label.npy')
+x_raw = np.load(r'C:\Users\cheng\dev\data\features.npy')[51:]
+y_raw=np.load(r'C:\Users\cheng\dev\data\label.npy')[51:]
 print(x_raw.shape)
 train_size = 1500
 
