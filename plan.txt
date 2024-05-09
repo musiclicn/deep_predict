@@ -1,0 +1,48 @@
+
+model as classification with probability( probably better than absolute price prediction)
+how to define error function? big up vs up is better than big up vs big down
+
+use 200 length k to predict next 5-10 k up or down or flat with probability 5 3min k = 15 mins later close price relative to current close price
+use CNN or Transformer model with position embedding
+
+time frame: 3min, 15min, 1 hour
+each k has 
+price to MA5, MA20, MA60 and MA 89 
+MACD (cross above or down 0 )
+KDJ J (<0 ,  >100)
+RSI (flag >70, < 30)
+
+
+200*3 min= 10*3 = 30 hour
+
+use same position index for different time frame
+dimension 1: 3 min k * 200
+dimension 2: 15min k * 40
+dimension 3: 1h k * 10
+
+Tasks breakdown
+Use gpt4 to write this code:
+
+data processor:
+
+1. aggregate() 1min k -> N min k
+input: 1 min k OHLC data 
+2. calc indicator,  MA, MACD, KDJ, RSI
+3. calc indicator signal  
+MACD (cross above or down 0 )
+KDJ J (<0 ,  >100)
+RSI (flag >70, < 30)
+4. add time during the day field, eg. 9:30, 12:00, 3:59pm
+
+5. calc next 15 min close price relative to current, categorize it to 5 categories(big up, up, flat, down, big down)
+
+6. group the above data together for NN training and validation
+number of features: 200 + 40 + 10
+
+
+write model for training:
+use Pytorch to write a CNN or Transformer model for traning
+1. verify the model is corret by predict the latest close price relative to 15 mins ago. should achieve 100%
+
+
+buy a GPU 4080 or 4070 Super Ti for faster training 
