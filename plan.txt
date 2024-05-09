@@ -6,6 +6,7 @@ how to define error function? big up vs up is better than big up vs big down
 use 200 length k to predict next 5-10 k up or down or flat with probability 5 3min k = 15 mins later close price relative to current close price
 use CNN or Transformer model with position embedding
 
+1st try: use only 3 min time frame (add more time frame later on)
 time frame: 3min, 15min, 1 hour
 each k has 
 price to MA5, MA20, MA60 and MA 89 
