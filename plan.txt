@@ -1,3 +1,4 @@
+pytorch training a classifier for time series
 
 model as classification with probability( probably better than absolute price prediction)
 how to define error function? big up vs up is better than big up vs big down
