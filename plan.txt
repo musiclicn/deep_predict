@@ -9,6 +9,10 @@ model 0:
 use 200 length k to predict next 15mins close price vs current close price
 using MACD, kdj, RSI, close price
 
+model 1:
+predict a new Xianduan start by checking MACD line cross above/ below 0
+- define a Xianduan
+
 use 200 length k to predict next 5-10 k up or down or flat with probability 5 3min k = 15 mins later close price relative to current close price
 use CNN or Transformer model with position embedding
 
